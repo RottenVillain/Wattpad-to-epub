@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wattpad to EPUB Converter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    input[type="url"] {
+      width: 80%;
+      padding: 0.5em;
+      margin-bottom: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 0.6em 1.5em;
+      background-color: #ff5500;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    #status {
+      margin-top: 1em;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Wattpad to EPUB Converter</h1>
+    <input type="url" id="storyUrl" placeholder="Enter Wattpad story URL" required />
+    <br />
+    <button onclick="convert()">Convert</button>
+    <p id="status"></p>
+  </div>
+
+  <script>
+    async function convert() {
+      const url = document.getElementById("storyUrl").value;
+      const status = document.getElementById("status");
+
+      if (!url.startsWith("http")) {
+        status.textContent = "Please enter a valid Wattpad URL.";
+        return;
+      }
+
+      status.textContent = "Converting... Please wait.";
+
+      // Simulate API call
+      try {
+        // Replace this block with actual backend call later
+        setTimeout(() => {
+          status.innerHTML = `✅ Conversion complete! <a href="s
